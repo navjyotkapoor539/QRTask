@@ -9,7 +9,7 @@ const AdminDash = () => {
   useEffect(()=>{
     const fetchOrders=async()=>{
       try {
-        const response=await axios.get("http://localhost:4001/orders/order",{
+        const response=await axios.get("https://qrtask-2.onrender.com/orders/order",{
          withCredentials: true
         });
         setOrders(response.data);
@@ -22,7 +22,7 @@ const AdminDash = () => {
 
   const logout=async()=>{
     try {
-      await axios.post("http://localhost:4001/admin/logout",{
+      await axios.post("https://qrtask-2.onrender.com/admin/logout",{
         withCredentials:true
       });
       navigate("/admin/login");
