@@ -10,7 +10,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4001/admin/login",  {
+      const response = await axios.post("https://qrtask-2.onrender.com/admin/login",  {
         username,
         password,},
        {withCredentials: true});
