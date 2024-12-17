@@ -20,7 +20,7 @@ const DB_URI = process.env.MONGODB_URI;
 app.use(cookieParser());
 app.use(
   cors({
-    origin: process.env.FRONTEND_URI,
+    origin: '*',
     credentials: true,
   })
 );
