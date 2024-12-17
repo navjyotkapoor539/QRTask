@@ -51,9 +51,11 @@ const AdminDash = () => {
             <div className="mt-4">
               <h3 className="font-semibold text-gray-700">Items:</h3>
               <ul className="list-disc list-inside text-gray-600">
-                {order.items.map((item, index) => (
+                {order.items?.map((item, index) => (
                   <li key={index} className="text-sm">
-                    {item.menuItemId.name} - {item.quantity}
+                    {item?.menuItemId?.name
+                      ? `${item.menuItemId.name} - ${item.quantity}`
+                      : "Item details unavailable"}
                   </li>
                 ))}
               </ul>
