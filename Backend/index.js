@@ -20,7 +20,7 @@ const DB_URI = process.env.MONGODB_URI;
 app.use(cookieParser());
 app.use(
   cors({
-    origin: '*',
+    origin: 'https://qr-task-chi.vercel.app',
     credentials: true,
   })
 );
