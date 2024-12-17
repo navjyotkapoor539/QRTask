@@ -17,7 +17,7 @@ const MenuPage = () => {
   useEffect(()=>{
     const fetchMenu=async()=>{
       try {
-        const response=await axios.get("http://localhost:4001/menu/menu");
+        const response=await axios.get("https://qrtask-2.onrender.com/menu/menu");
         setMenu(response.data);
       } catch (error) {
         console.error("Error fetching menu:", error);
@@ -28,7 +28,7 @@ const MenuPage = () => {
 
   const handleAddItem=async()=>{
     try {
-      const response=await axios.post("http://localhost:4001/menu/menu",newItem);
+      const response=await axios.post("https://qrtask-2.onrender.com/menu/menu",newItem);
       setMenu([...menu,response.data]);
       setNewItem({ name: "", description: "", price: "" });
     } catch (error) {
@@ -38,7 +38,7 @@ const MenuPage = () => {
 
   const handleDeleteItem=async(id)=>{
     try {
-      await axios.delete(`http://localhost:4001/menu/menu${id}`);
+      await axios.delete(`https://qrtask-2.onrender.com/menu/menu${id}`);
       setMenu(menu.filter((item)=>item._id!==id));
     } catch (error) {
       console.error("Error deleting menu item:", error);
@@ -64,7 +64,7 @@ const MenuPage = () => {
     }
     try {
       const order={...userDetails,items:orderItems};
-      await axios.post("http://localhost:4001/orders",order);
+      await axios.post("https://qrtask-2.onrender.com/orders",order);
       setOrderItems([]);
       navigate("/thank-you");
     } catch (error) {
